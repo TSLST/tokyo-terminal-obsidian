@@ -3,8 +3,9 @@ Type: Doc
 Use: Readme docs for Tokyo Terminal them, Obsidian version.
 Tags: !!str "#documentation #theme"
 Creation: 2026-01-15
-Update: 2026-06-10
-Contributors: 神縁
+Update: 2026-06-11
+Contributors: [神縁]
+Version: !!str 2.0.1
 ---
 
 # Tokyo Terminal
@@ -44,8 +45,8 @@ This isn’t just a color scheme; it’s a high-contrast, high-energy workspace 
 
 #### Design Philosophy
 
-Inspired by the **hypnotic glow of vintage CRTs**, the **hyper-saturated dreams of synthwave**, *vibrancy of outrun nostalgia*, tokyo-terminal is a love letter to the 80s as I reimagined, restylized and modernized them.
-Think of **synths, oversaturated consoles**, a world of outrun sunsets, VHS static, and cyber alleyways. With a nod to Taki Ono’s neon design photography, this theme merges retro-futurism with modern clarity.
+Inspired by the **hypnotic color glow of vintage CRTs**, the **hyper-saturated dreams of synthwave**, *vibrancy of outrun nostalgia*, tokyo-terminal is a love letter to the 80s as I reimagined, restylized and modernized them.
+Think of **synths, oversaturated consoles**, a world of outrun sunsets and cyber alleyways, just free of VHS static. With a nod to Taki Ono’s neon design photography, this theme merges retro-futurism with modern clarity.
 
 Here for VSCodium, *tokyo-terminal* delivers:
 - **Bold readability**: Crisp **cyan (#34e2e2)** syntax on deep **purple (#2a2436)** and **near-black (#060507)** backgrounds.
@@ -87,9 +88,12 @@ For developers/writers nostalgic of the future. For those who code like the futu
 
 - [ ] Publishing Obsidian version
 - [x] Publishing VS Codium version on the marketplace
+- [ ] Publishing VS Code version on the marketplace
 - [ ] Find KaTeX devs and ask them to add an align tag resetter
+- [ ] Publish Licence to SPDX
 - [ ] Review port to Firefox
 - [ ] Port to Chrome
+- [ ] Internal link hovering should be purple or blue and without underline. Both types hover in cyan for now and I could not figure out how to overcome that behavior.
 <br><br>
 
 > Do not hesitate to drop me a line on GitHub if you spot an issue, see more tweaks and like the color scheme.

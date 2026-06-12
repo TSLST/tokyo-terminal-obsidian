@@ -5,7 +5,7 @@ Tags: !!str "#documentation #theme"
 Creation: 2026-01-15
 Update: 2026-06-11
 Contributors: [神縁]
-Version: !!str 2.0.1
+Version: !!str 1.4.1
 ---
 
 # Tokyo Terminal
@@ -28,20 +28,22 @@ Version: !!str 2.0.1
 ## Description
 -----------------------------------------
 
+---
 ### Short Description (for marketplace/extension metadata)
 
-```
-Tokyo Terminal is a high-contrast, neon-drenched multi-open-source-apps theme inspired by a retro-futurist 80s terminal aesthetics, and Tokyo’s electric nights.
-Built for clarity and vibrancy, with accentuation for maximum visual efficiency.
-Designed @ 神縁 (2026)
+```plaintext
+Tokyo Terminal is a neon, high-contrast Obsidian theme inspired by a retrofuturist 80s terminal aesthetics, and Tokyo electric nights. Built for clarity and vibrancy, with maximum visual efficiency.
 ```
 
 ---
-
 ### Long README Introduction
 
-**Welcome to *tokyo-terminal***, an Obsidian theme that transports your editor to a neon-lit japanese terminal circa 1984.
+**Welcome to *tokyo-terminal***, an Obsidian theme that transports your editor to a neon-colored terminal circa 1984.
 This isn’t just a color scheme; it’s a high-contrast, high-energy workspace for developers who crave **clarity and visual accentuation**.
+
+Transform Obsidian into a neon-lit, retro-futurist terminal with high-contrast colors and synthwave accents inspired by Tokyo electric nights aesthetics.
+
+Apply crisp cyan on deep purple and near-black backgrounds, with hot pink, sunset orange, gold and deep violet highlights for syntax and UI.
 
 #### Design Philosophy
 
@@ -86,7 +88,7 @@ For developers/writers nostalgic of the future. For those who code like the futu
 ## ToDo
 -----------------------------------------
 
-- [ ] Publishing Obsidian version
+- [x] Publishing Obsidian version
 - [x] Publishing VS Codium version on the marketplace
 - [ ] Publishing VS Code version on the marketplace
 - [ ] Find KaTeX devs and ask them to add an align tag resetter

@@ -48,6 +48,8 @@
   --background-secondary-alt: #2a2436; /* Menubar */
   --button-foreground: #ECEFF4;
   --button-color: #fe8019;
+  --button-color-alt: #0F675B;
+  --border-color: #34e2e2;
 
   /* Relative UI */
   --background-primary: #060507;
@@ -118,7 +120,7 @@
   --interactive-normal: #00ff00;/* #0F675B;*/
   
   /* Borders */
-  --background-modifier-border: #ff00ff; /* #34e2e2 */
+  --background-modifier-border: #E3E9AE; /* #34e2e2 */
   --background-modifier-hover: #ff8800; /* added */
   --blockquote-border-color: #A3FF8C; /* Side line */
   --blockquote-border-thickness: 2px;
@@ -1026,6 +1028,40 @@ span.cm-hmd-codeblock {
 html body button,
 html body button:active,
 html body button:focus {
-  background-color: #ff0000 !important;
+  background-color: var(--button-color-alt) !important;
   color: #ffffff !important;
+}
+
+.setting-group .setting-item {
+    border-top: var(--border-width) solid var(--border-color);
+}
+
+.modal.mod-settings .vertical-tab-header {
+    border-inline-end: var(--border-width) solid var(--divider-color);
+}
+body {
+  --status-bar-border-color: var(--border-color);
+  --tab-outline-color: var(--border-color);
+  --divider-color: var(--border-color);
+  --slider-track-background: var(--hr-color);
+  --table-header-border-color: var(--border-color);
+  --table-border-color: var(--border-color);--table-add-button-border-color: var(--border-color);
+/*
+  border-top: 1px solid var(--border-color);
+  border-bottom: 4px solid var(--border-color);
+  --bases-embed-border-color: var(--border-color);
+  --titlebar-border-color: var(--border-color);
+  --bases-cards-shadow: 0 0 0 1px var(--border-color);
+  --setting-items-border-color: var(--border-color);
+  --code-border-color: var(--border-color);
+  --embed-block-shadow-hover: 0 0 0 1px var(--background-modifier-border), inset 0 0 0 1px var(--background-modifier-border);
+  --footnote-divider-color: var(--metadata-divider-color);
+  --metadata-border-color: var(--background-modifier-border);
+  --metadata-divider-color: var(--background-modifier-border);
+  --pill-border-color: var(--background-modifier-border);
+  --titlebar-border-color: var(--background-modifier-border);
+*/
+}
+thead {
+    border-bottom: 4px solid var(--border-color);
 }

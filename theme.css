@@ -1,5 +1,8 @@
-/* Tokyo Terminal Theme for Obsidian v1.4.1 */
+
+/*---*/
+/* Tokyo Terminal Theme for Obsidian v1.5.0 */
 /* Retro 80s terminal design - Vaporwave colored, high contrast and retrofuturistic */
+/*---*/
 
 .theme-dark {
   color-scheme: dark;
@@ -36,14 +39,22 @@
 
   --window-border-color: #34e2e2;
   --window-border: 1px solid var(--window-border-color);
+
+  --font-monospace-theme: "JetBrains Mono", Menlo, SFMono-Regular, Consolas,
+  "Fira Coda", SFMono-Regular, "Roboto Mono", "Source Code Pro", monospace;
   
-  /* Backgrounds */
-  --background-primary: #060507;
-  --background-primary-alt: #2a2436; /* Internal menu sections */
+  /* Fixed UI */
   --background-secondary: #2a2436; /* Ribbon, codeblocks and sidebar */
   --background-secondary-alt: #2a2436; /* Menubar */
-  /* own */
-  --background-tertiary: #0F675B;
+  --button-foreground: #ECEFF4;
+  --button-color: #fe8019;
+
+  /* Relative UI */
+  --background-primary: #060507;
+  --background-primary-alt: #2a2436; /* Internal menu sections */
+ 
+  --background-tertiary: #ff0000;
+  --background-tertiary-alt: #999998;
   
   /* Text Colors */
   --text-normal: #34e2e2; /* Cyan */
@@ -78,7 +89,7 @@
   --link-unresolved-opacity: 1;
   
   /* Tags */
-  --tag-capsule-color: #2a2436;
+  --tag-capsule-color: var(--background-primary-alt);
   --tag-color: #A3FF8C; /* Small tag in the YAML at start */
   
   /* Emphasis */
@@ -104,6 +115,7 @@
   --interactive-accent-hover: #6C18D6;
   --interactive-before: #F1ADFF; /* ? */
   --interactive-hover: #6C18D6;
+  --interactive-normal: #0F675B;
   
   /* Borders */
   --background-modifier-border: #34e2e2; /* ? */
@@ -145,9 +157,9 @@
   --properties-border: 1px solid var(--hr-color);
 }
 
-/**********************/
-/* Graph View */
-/**********************/
+/*=========================*/
+/*= Graph View */
+/*=========================*/
 .theme-dark .graph-view.color-arrow {
   color: var(--graph-node);
 }
@@ -156,9 +168,9 @@
   color: var(--graph-node-focused);
 }
 
-/**********************/
-/* HIGHLIGHTER */
-/**********************/
+/*=========================*/
+/*= HIGHLIGHTER */
+/*=========================*/
 mark {
   background-color: var(--text-mark) !important;
   padding: 0px;
@@ -218,38 +230,43 @@ mark {
 
 /* File View Icons - Options and Split Panel Buttons */
 .file-view-actions a {
-  color: #fe8019 !important;
+  color: var(--button-color);
 }
 
 .file-view-actions a:hover {
-  color: #6C18D6 !important;
+  color: var(--interactive-hover);
 }
 
 .clickable-icon.view-action {
-  color: #fe8019;
+  color: var(--button-color);
+  background-color: transparent;
 }
 
-/* Dropdown Menu */
+/*=========================*/
+/*= Dropdown Menu */
+/*=========================*/
 .menu {
   background-color: var(--background-primary);
   border: var(--window-border);
 }
 
 .menu-item {
-  color: #fe8019;
+  color: var(--button-color);
 }
 
 .menu-item:hover {
+  color: var(--interactive-hover);
   background-color: #2a2436;
   /*border: 1px solid #6C18D6; */
-  color: #6C18D6;
 }
 
 .menu-separator {
   background-color: #999998;
 }
 
-/* Inline Code */
+/*=========================*/
+/*= Inline Code */
+/*=========================*/
 code,
 .cm-inline-code {
   background-color: var(--tag-capsule-color) !important;
@@ -257,18 +274,19 @@ code,
   bottom: 0px !important;
 }
 
+/* Rrr */
 .cm-s-obsidian span.cm-error {
   color: var(--text-error);
 }
 
 /* Code Blocks - Lighter background */
 .markdown-preview-view pre {
-  background-color: #2a2436;
+  background-color: var(--background-primary-alt);
 }
 
 .cm-s-obsidian pre.HyperMD-codeblock {
-  background-color: #2a2436;
-  color: var(--text-soften) !important;
+  background-color: var(--background-primary-alt);
+  color: var(--text-soften);
 }
 
 .cm-active.HyperMD-quote.HyperMD-quote-1.cm-line {
@@ -341,30 +359,23 @@ img {
   background-color: var(--text-normal);
 }
 
-button.mod-cta {
-  background-color: #fe8019;
-  color: #ECEFF4;
-}
-
-button.mod-cta:hover {
-  background-color: #6C18D6;
-}
-
-/* File Explorer */
+/*=========================*/
+/*= File Explorer */
+/*=========================*/
 .nav-folder-title {
   color: #ff418e;
-  background-color: #060507;
+  background-color: var(--background-primary);
   font-weight: 500;
 }
 
 .nav-folder-title:hover {
-  color: #6C18D6 !important;
-  background-color: #060507;
+  color: var(--interactive-hover);
+  background-color: var(--background-tertiary-alt);
 }
 
 .nav-file-title {
   color: #34e2e2;
-  background-color: #060507;
+  background-color: var(--background-primary);
 }
 
 .nav-file-title:hover {
@@ -373,13 +384,27 @@ button.mod-cta:hover {
 }
 
 .nav-folder-children {
-  background-color: #060507;
+  background-color: var(--background-primary);
+}
+
+.tree-item-self.nav-folder-title.is-clickable.mod-collapsible {
+  background-color: var(--background-primary-alt);
+  border: 2px solid color-mix(in srgb, var(--background-primary) 60%, transparent);
+}
+
+.tree-item-self.nav-file-title.tappable.is-clickable {
+  background-color: var(--background-primary);
+  border: 0.5px solid color-mix(in srgb, var(--hr-color) 13.37%, transparent);
+}
+
+.nav-files-container.node-insert-event {
+  background-color: var(--background-primary-alt);
 }
 
 /* Search Results */
 .search-result-file-matches {
   color: #999999;
-  background-color: #060507;
+  background-color: var(--background-primary);
 }
 
 .search-result-file-match:hover {
@@ -389,7 +414,7 @@ button.mod-cta:hover {
 
 .search-result-file-title {
   color: #fe8019;
-  background-color: #060507;
+  background-color: var(--background-primary);
 }
 
 .search-result-file-title:hover {
@@ -399,49 +424,52 @@ button.mod-cta:hover {
 
 .search-result-file-matched-text {
   color: #A3FF8C;
-  background-color: #060507;
+  background-color: var(--background-primary);
 }
 
 .search-result-container {
   color: #999999;
-  background-color: #060507;
+  background-color: var(--background-primary);
 }
 
 /* Vault Action Buttons - New note, new folder, settings gear, help */
 .nav-action-button {
-  color: #fe8019;
+  color: var(--button-color);
 }
 
 .nav-action-button:hover {
-  color: #6C18D6;
+  color: var(--interactive-hover);
 }
 
 /* Settings + Help buttons */
 .workspace-drawer-vault-actions .clickable-icon {
-  color: #fe8019 !important;
+  color: var(--button-color);
+  background-color: transparent;
 }
 
 .workspace-drawer-vault-actions .clickable-icon:hover {
-  color: #6C18D6 !important;
+  color: var(--interactive-hover);
 }
 
 .workspace-drawer-vault-actions .clickable-icon svg {
-  color: #fe8019 !important;
+  color: var(--button-color);
+  background-color: transparent;
 }
 
 .workspace-drawer-vault-actions .clickable-icon:hover svg {
-  color: #6C18D6 !important;
+  color: var(--interactive-hover);
 }
 
 /* Sidebar toggle button */
 .sidebar-toggle-button .clickable-icon,
 .sidebar-toggle-button .clickable-icon svg {
-  color: #34e2e2 !important;
+  color: var(--color-foreground);
+  background-color: var(--background-secondary);
 }
 
 .sidebar-toggle-button .clickable-icon:hover,
 .sidebar-toggle-button .clickable-icon:hover svg {
-  color: #6C18D6 !important;
+  color: var(--interactive-hover);
 }
 
 /* Ribbon - Pink icons for plugin tabs */
@@ -471,7 +499,7 @@ button.mod-cta:hover {
 }
 
 .side-dock-plugin-panel-inner {
-  background-color: #060507;
+  background-color: var(--background-primary);
 }
 
 .side-dock-title {
@@ -541,12 +569,28 @@ button.mod-cta:hover {
   font-weight: 700;
 }
 
-/* Italic */
+/*=========================*/
+/*= Italic */
+/*=========================*/
 .cm-em {
   color: var(--italic-color);
 }
 
-/* Hashtags - Same as inline code */
+/*=========================*/
+/*= Main screen */
+/*=========================*/
+
+.empty-state-action.tappable {
+  color: var(--button-color);
+}
+
+.empty-state-action.tappable:hover {
+  color: var(--interactive-hover);
+}
+
+/*=========================*/
+/*= Hashtags - Same as inline code */
+/*=========================*/
 .cm-s-obsidian span.cm-hashtag {
   background-color: var(--tag-capsule-color);
   color: #A3FF8C;
@@ -554,7 +598,9 @@ button.mod-cta:hover {
   border-radius: 3px;
 }
 
-/* Properties YAML */
+/*=========================*/
+/*= Properties YAML */
+/*=========================*/
 .metadata-properties-heading {
   display: inline-flex;
   width: 100%;
@@ -638,11 +684,15 @@ a.tag {
 
 /* Code Blocks */
 .CodeMirror-code span.cm-inline-code {
-  color: var(--code-tag) !important;
+  color: var(--code-tag);
 }
 
 .cm-s-obsidian pre.HyperMD-codeblock {
-  color: var(--code-normal)  !important;
+  color: var(--code-normal);
+}
+
+.HyperMD-codeblock.HyperMD-codeblock-bg.cm-line {
+  background-color: var(--background-primary-alt);
 }
 
 /* Embeds */
@@ -844,7 +894,9 @@ img.emoji {
   color: var(--text-on-accent);
 }
 
-/* Links */
+/*=========================*/
+/*= Links */
+/*=========================*/
 .markdown-source-view.mod-cm6 .cm-underline {
     color: var(--link-color);
     text-decoration-line: var(--link-external-decoration);
@@ -880,3 +932,179 @@ img.emoji {
     text-decoration-color: transparent !important; /* Forces underline to disappear */
 }
 
+/*=========================*/
+/*= Boutons du menu */
+/*=========================*/
+
+.modal-close-button.mod-raised.clickable-icon {
+    color: var(--button-foreground);
+    background-color: var(--button-color);
+}
+
+.modal-close-button.mod-raised.clickable-icon:hover {
+    background-color: var(--interactive-hover);
+}
+
+.dropdown {
+    color: var(--button-foreground);
+    background-color: var(--interactive-normal);
+}
+
+div.setting-item-control.button {
+  background-color: var(--button-color);
+  color: var(--button-foreground);
+}
+
+button.mod-cta {
+  background-color: var(--button-color);
+  color: var(--button-foreground);
+}
+
+button.mod-cta:hover {
+  background-color: var(--interactive-hover);
+}
+
+/*=========================*/
+/*= Code sections */
+/*=========================*/
+.cm-hmd-codeblock.cm-type {
+  color: var(--color-ansiCyan);
+  font-weight: 600;
+}
+
+.cm-hmd-codeblock.cm-number {
+  color: var(--color-Pink);
+}
+
+.cm-hmd-codeblock.cm-keyword,
+.cm-hmd-codeblock.cm-operator {
+  color: var(--color-ansiBrightYellow);
+  font-weight: 600;
+}
+
+.cm-def.cm-hmd-codeblock {
+  color: var(--color-ansiRed);
+  font-weight: 600;
+}
+
+.cm-hmd-codeblock.cm-variable {
+  color: var(--color-ansiWhite);
+}
+
+.cm-hmd-codeblock.cm-string {
+  color: var(--color-ansiBrightGreen);
+}
+
+.cm-hmd-codeblock.cm-meta {
+  color: var(--color-oldRed);
+}
+
+span.cm-hmd-codeblock {
+  color: var(--code-normal);
+}
+
+.cm-attribute.cm-hmd-codeblock {
+  color: var(--color-Gold);
+}
+
+.cm-builtin.cm-hmd-codeblock {
+  color: var(--color-ansiRed);
+}
+
+.cm-comment.cm-hmd-codeblock {
+  color: var(--color-ansiGreen);
+}
+
+/*=========================*/
+/*= MOBILE FIX - Android button cyan background bleed */
+/*= Append this to the end of tokyo-terminal-theme.css */
+/*=========================*/
+
+/* 1. Kill WebView tap highlight globally — the #34e2e2 was leaking here */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+/* 2. Enforce transparent backgrounds on all clickable icon variants
+      Obsidian mobile adds extra states not triggered on desktop */
+/*
+.clickable-icon,
+.clickable-icon:active,
+.clickable-icon:focus,
+.clickable-icon.is-active,
+.nav-action-button,
+.nav-action-button:active,
+.nav-action-button:focus,
+.view-action,
+.view-action:active,
+.view-action:focus {
+  background-color: transparent !important;
+  -webkit-tap-highlight-color: transparent;
+}
+*/
+/* 3. Dropdown buttons — the wheel/settings icon group */
+.workspace-drawer-vault-actions .clickable-icon,
+.workspace-drawer-vault-actions .clickable-icon:active,
+.workspace-drawer-vault-actions .clickable-icon:focus,
+.workspace-drawer-vault-actions .clickable-icon svg,
+.workspace-drawer-vault-actions .clickable-icon:active svg,
+.workspace-drawer-vault-actions .clickable-icon:focus svg {
+  background-color: transparent !important;
+  color: var(--button-color);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 4. Nav action buttons (new note, new folder icons) */
+.nav-action-button.is-active,
+.nav-action-button:active,
+.nav-action-button:focus {
+  background-color: transparent !important;
+  color: var(--button-color);
+}
+
+/* 5. Mobile-specific: Obsidian wraps some buttons differently on Android.
+      The .mod-mobile class is added to body on mobile builds. */
+.mod-mobile .clickable-icon,
+.mod-mobile .clickable-icon:hover,
+.mod-mobile .clickable-icon:active,
+.mod-mobile .clickable-icon:focus {
+  background-color: transparent !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mod-mobile .view-actions .clickable-icon,
+.mod-mobile .view-actions .clickable-icon:active {
+  background-color: transparent !important;
+  color: var(--button-color);
+}
+
+/* 6. Dropdown selects — Android renders <select> with system background
+      which can collide with your cyan foreground variable */
+select,
+.dropdown,
+.dropdown:focus,
+.dropdown:active {
+  -webkit-tap-highlight-color: transparent;
+  background-color: var(--interactive-normal);
+  color: var(--button-foreground);
+}
+
+/* 7. Sidebar ribbon actions on mobile tap */
+.side-dock-ribbon-action,
+.side-dock-ribbon-action:active,
+.side-dock-ribbon-action:focus,
+.side-dock-ribbon-tab,
+.side-dock-ribbon-tab:active,
+.side-dock-ribbon-tab:focus {
+  background-color: transparent !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 8. Guard: --background-modifier-border is cyan (#34e2e2) in your theme.
+      Some Obsidian mobile components use it as a background-color fallback.
+      This resets the pattern on interactive elements only. */
+.mod-mobile button,
+.mod-mobile .clickable-icon,
+.mod-mobile [class*="action"] {
+  --background-modifier-hover: #2a2436;
+  -webkit-tap-highlight-color: transparent;
+}

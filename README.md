@@ -5,7 +5,7 @@ Tags: !!str "#documentation #theme"
 Creation: 2026-01-15
 Update: 2026-06-11
 Contributors: [神縁]
-Version: !!str 1.4.1
+Version: !!str 1.5.0
 ---
 
 # Tokyo Terminal
@@ -95,7 +95,9 @@ For developers/writers nostalgic of the future. For those who code like the futu
 - [ ] Publish Licence to SPDX
 - [ ] Review port to Firefox
 - [ ] Port to Chrome
-- [ ] Internal link hovering should be purple or blue and without underline. Both types hover in cyan for now and I could not figure out how to overcome that behavior.
+- [x] Fixed code sections color to match usual tokyo-terminal conventions
+- [x] Correction of button transparency as --color-foreground impacting the color for the blue buttons
+- [ ] Internal link hovering should be purple or blue and without underline. Both types hover in cyan for now and I could not figure out how to overcome that behavior
 <br><br>
 
 > Do not hesitate to drop me a line on GitHub if you spot an issue, see more tweaks and like the color scheme.

@@ -110,15 +110,16 @@
   --code-punctuation: var(--text-soften); /* Punctuation while they are being written in blockquote */
   
   /* Interactive Elements */ /* Checkboxes */
-  --interactive-accent: #7fff00; /* Value if [x] */
+  --interactive-accent: #0000ff; /* #7fff00; /* Value if [x] */
   --interactive-accent-muted: rgba(254, 128, 25, 0.55);
   --interactive-accent-hover: #6C18D6;
   --interactive-before: #F1ADFF; /* ? */
   --interactive-hover: #6C18D6;
-  --interactive-normal: #0F675B;
+  --interactive-normal: #00ff00;/* #0F675B;*/
   
   /* Borders */
-  --background-modifier-border: #34e2e2; /* ? */
+  --background-modifier-border: #ff00ff; /* #34e2e2 */
+  --background-modifier-hover: #ff8800; /* added */
   --blockquote-border-color: #A3FF8C; /* Side line */
   --blockquote-border-thickness: 2px;
   --blockquote-color: #A3FF8C; /* Blockquote text color */
@@ -1016,111 +1017,15 @@ span.cm-hmd-codeblock {
 }
 
 /*=========================*/
-/*= DIAGNOSTIC ROUND 2 - REMOVE AFTER TESTING                  */
+/*= DIAGNOSTIC ROUND 3 - REMOVE AFTER TESTING                  */
 /*= Block 6 (html body button) confirmed working - keep it     */
 /*= for true <button> elements but scope it later.             */
 /*= This round targets non-<button> cyan survivors with        */
 /*= distinct colors so we can map each to a class.             */
 /*=========================*/
-
-/* [A] Modal header buttons: back arrow + close X (top of menu) */
-/*     ORANGE - these are likely .clickable-icon variants */
-html body .modal-close-button,
-html body .modal-close-button *,
-html body .clickable-icon.mod-back,
-html body .modal .clickable-icon,
-html body .modal-header .clickable-icon,
-html body .modal-header .clickable-icon svg {
-  background-color: #ff8800 !important;
-  color: #ffffff !important;
-  fill: #ffffff !important;
-}
-
-/* [B] Modal title text - target the title bar specifically */
-/*     LIME GREEN */
-html body .modal-title,
-html body .modal-header,
-html body .modal-header .modal-title {
-  background-color: #00ff00 !important;
-  color: #000000 !important;
-}
-
-/* [C] Settings nav items (General, Editor, Appearance...) */
-/*     PURPLE - confirm these ARE buttons (block 6 should've caught) */
-html body .vertical-tab-nav-item,
-html body .vertical-tab-nav-item.is-active {
-  background-color: #aa00ff !important;
-  color: #ffffff !important;
-}
-
-/* [D] Ribbon / mod-wheel button (hamburger-like menu trigger) */
-/*     PINK */
-html body .side-dock-ribbon-action,
-html body .side-dock-ribbon-tab,
-html body .workspace-tab-header-inner-icon,
-html body .clickable-icon[aria-label*="menu" i],
-html body .clickable-icon[aria-label*="More" i] {
-  background-color: #ff00aa !important;
-  color: #ffffff !important;
-  fill: #ffffff !important;
-}
-
-/* [E] Vault name dropdown trigger */
-/*     YELLOW */
-html body .workspace-drawer-vault-switcher,
-html body .workspace-drawer-header,
-html body .workspace-drawer-header-name,
-html body .clickable-icon.workspace-drawer-vault-switcher {
-  background-color: #ffff00 !important;
-  color: #000000 !important;
-}
-
-/* [F] Screen selector tabs (Files / Search / Tags) and their dropdowns */
-/*     TEAL-different (distinguish from theme cyan) */
-html body .workspace-drawer-tab-option,
-html body .workspace-drawer-tab-options,
-html body .workspace-tab-header,
-html body .workspace-drawer-active-tab-icon,
-html body .nav-buttons-container .clickable-icon {
-  background-color: #008080 !important;
-  color: #ffff00 !important;
-}
-
-/* [G] Dotted menu (file context menu trigger, top right of file explorer) */
-/*     BROWN */
-html body .view-header-icon,
-html body .view-actions .clickable-icon,
-html body .view-action.clickable-icon {
-  background-color: #663300 !important;
-  color: #ffffff !important;
-}
-
-/* [H] Bottom bar: burger, add tab, search icons */
-/*     MAGENTA */
-html body .mobile-navbar,
-html body .mobile-navbar .clickable-icon,
-html body .mobile-navbar-tab,
-html body .mobile-navbar-tab-icon {
-  background-color: #ff00ff !important;
-  color: #ffffff !important;
-}
-
-/* [I] Bottom bar arrows (the gray ones with cyan icon - likely nav history) */
-/*     WHITE bg / BLUE text to distinguish from H */
-html body .clickable-icon[aria-label*="Navigate" i],
-html body .clickable-icon[aria-label*="back" i],
-html body .clickable-icon[aria-label*="forward" i] {
-  background-color: #ffffff !important;
-  color: #0000ff !important;
-  fill: #0000ff !important;
-}
-
-/* [J] Links/outgoing-links screen items */
-/*     DARK GREEN bg / WHITE text */
-html body .tree-item-self,
-html body .search-result-file-title,
-html body .nav-file-title,
-html body .nav-folder-title {
-  background-color: #003300 !important;
+html body button,
+html body button:active,
+html body button:focus {
+  background-color: #ff0000 !important;
   color: #ffffff !important;
 }
